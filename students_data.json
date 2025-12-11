@@ -1,0 +1,42 @@
+[
+  {
+    "first_name": "Juan",
+    "last_name": "Dela Cruz",
+    "student_number": "2025-001",
+    "program": "BSIT",
+    "email": "juan@example.com",
+    "year_level": 2
+  },
+  {
+    "first_name": "Maria",
+    "last_name": "Santos",
+    "student_number": "2025-002",
+    "program": "BSCS",
+    "email": "maria@example.com",
+    "year_level": 3
+  },
+  {
+    "first_name": "Pedro",
+    "last_name": "Reyes",
+    "student_number": "2025-003",
+    "program": "BSIT",
+    "email": "pedro@example.com",
+    "year_level": 1
+  },
+  {
+    "first_name": "Ana",
+    "last_name": "Lopez",
+    "student_number": "2025-004",
+    "program": "BSCS",
+    "email": "ana@example.com",
+    "year_level": 4
+  },
+  {
+    "first_name": "Luis",
+    "last_name": "Gonzalez",
+    "student_number": "2025-005",
+    "program": "BSIT",
+    "email": "luis@example.com",
+    "year_level": 2
+  }
+]

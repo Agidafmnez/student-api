@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  title: Student API
+  version: 1.0.0
+servers:
+  - url: /
+paths:
+  /students:
+    get:
+      summary: List students
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: {}
+            application/xml: {}
+    post:
+      summary: Create student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentCreate'
+            example:
+              first_name: Juan
+              last_name: Dela Cruz
+              student_number: '2025-001'
+              program: BSIT
+              email: juan@example.com
+              year_level: 2
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/StudentCreate'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json: {}
+            application/xml: {}
+  /students/{id}:
+    get:
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: {}
+            application/xml: {}
+components:
+  schemas:
+    StudentCreate:
+      type: object
+      properties:
+        first_name: { type: string }
+        last_name: { type: string }
+        student_number: { type: string }
+        program: { type: string }
+        email: { type: string }
+        year_level: { type: integer }
+      required: [first_name, last_name, student_number, email]

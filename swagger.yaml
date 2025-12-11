@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: Student API
+  version: 1.0.0
+paths:
+  /students:
+    get:
+      summary: Get all students
+      responses:
+        '200':
+          description: List of students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+            application/xml:
+              schema:
+                type: string
+    post:
+      summary: Create a new student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+          application/xml:
+            schema:
+              type: string
+      responses:
+        '201':
+          description: Student created
+  /students/{id}:
+    get:
+      summary: Get a student by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Student details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+    put:
+      summary: Update a student
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+          application/xml:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Updated student
+    delete:
+      summary: Delete a student
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Student deleted
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        student_number:
+          type: string
+        program:
+          type: string
+        email:
+          type: string
+        year_level:
+          type: integer
