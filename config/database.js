@@ -4,7 +4,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'mysql',
   dialectOptions: {
     ssl: {
-      require: true,
+      rejectUnauthorized: false, // allow self-signed certificate
     },
   },
 });
